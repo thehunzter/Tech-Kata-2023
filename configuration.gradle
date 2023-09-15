@@ -1,0 +1,14 @@
+ext.appVersion = [
+        versionCode: 1,
+        versionName: '1.0',
+]
+
+ext.sdk = [
+        compileSdkVersion: 33,
+        minSdkVersion    : 23,
+        targetSdkVersion : 33,
+]
+
+ext.appDetails = [
+        applicationId: "com.tech.kata"
+]
