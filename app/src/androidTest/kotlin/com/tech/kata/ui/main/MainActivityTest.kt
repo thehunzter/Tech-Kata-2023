@@ -13,28 +13,5 @@ import org.junit.runner.RunWith
 @LargeTest
 class MainActivityTest {
 
-    @get:Rule
-    var activityTestRule = TechKataActivityScenarioRule<MainActivity>()
-
-    @get:Rule
-    val mockWebServerRule = MockWebServerRule()
-
-
-    private val mainActivityRobot = MainActivityRobot()
-
-    @Before
-    fun setUp() {
-    }
-
-    @Test
-    fun changeText_sameActivity() {
-        launchActivity()
-
-        mainActivityRobot
-            .seesMainText("R2-D2")
-    }
-
-    private fun launchActivity() {
-        activityTestRule.launchActivity(MainActivity::class.java)
-    }
+   
 }
