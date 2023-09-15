@@ -16,7 +16,7 @@ class PeopleProvider @Inject constructor(
         }.onErrorReturn { PeopleResult.GenericFailure }
     }
 
-    fun map( peopleResponse: PeopleResponse): List<PeopleView> {
+    private fun map( peopleResponse: PeopleResponse): List<PeopleView> {
         return peopleResponse.result.map {
             PeopleView(it.name)
         }
