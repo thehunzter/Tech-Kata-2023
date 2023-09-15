@@ -1,7 +1,6 @@
-package com.tech.kata.ui
+package com.tech.kata.common
 
 import android.os.Bundle
-import androidx.annotation.LayoutRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding

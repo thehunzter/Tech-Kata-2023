@@ -3,7 +3,7 @@ package com.tech.kata.ui.main
 import android.os.Bundle
 import com.tech.kata.R
 import com.tech.kata.databinding.ActivityMainBinding
-import com.tech.kata.ui.BaseActivity
+import com.tech.kata.common.BaseActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

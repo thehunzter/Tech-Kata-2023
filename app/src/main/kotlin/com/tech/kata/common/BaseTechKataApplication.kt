@@ -1,4 +1,4 @@
-package com.tech.kata
+package com.tech.kata.common
 
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication

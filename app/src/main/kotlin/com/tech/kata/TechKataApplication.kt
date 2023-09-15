@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Service
 import com.tech.kata.common.AppComponent
 import com.tech.kata.common.AppModule
+import com.tech.kata.common.BaseTechKataApplication
 import com.tech.kata.common.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
