@@ -1,4 +1,4 @@
-package com.tech.kata
+package com.tech.kata.common
 
 import android.app.Application
 import android.content.Context

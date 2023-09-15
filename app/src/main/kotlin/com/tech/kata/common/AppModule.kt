@@ -2,10 +2,7 @@ package com.tech.kata.common
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.tech.kata.BaseAppModule
 import com.tech.kata.TechKataApplication
-import com.tech.kata.msl.people.PeopleObjectGraph
-import com.tech.kata.msl.people.PeopleService
 import com.tech.kata.network.NetworkLibrary
 import dagger.Module
 import dagger.Provides
