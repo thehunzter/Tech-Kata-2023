@@ -15,18 +15,15 @@ class PeoplePresenter @Inject constructor(
     override fun getPeople() {
         peopleProvider.getPeople()
             .subscribe {
-                when(it){
-                    is PeopleResult.Success-> {
-                        val name =
-                            it.result.firstOrNull {
-                                    people -> people.name.contains("R") }?.name ?: "Not Found!!!"
+                if (it is PeopleResult.Success) {
+                    val name =
+                        it.result.firstOrNull { people -> people.name.contains("R") }?.name
+                            ?: "Not Found!"
 
-                        view.showName(name)
-                    } else -> {
-                        view.showErrorMessage("Error in connection")
-                    }
+                    view.showName(name)
+                } else {
+                    view.showErrorMessage("Error in connection")
                 }
-
-        }
+            }
     }
 }

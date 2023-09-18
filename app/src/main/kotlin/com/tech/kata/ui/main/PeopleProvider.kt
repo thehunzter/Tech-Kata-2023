@@ -17,7 +17,7 @@ class PeopleProvider @Inject constructor(
     }
 
     private fun map( peopleResponse: PeopleResponse): List<PeopleView> {
-        return peopleResponse.result.map {
+        return peopleResponse.results.map {
             PeopleView(it.name)
         }
     }

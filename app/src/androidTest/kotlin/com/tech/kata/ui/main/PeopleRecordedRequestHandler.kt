@@ -19,6 +19,6 @@ class PeopleRecordedRequestHandler: RecordedRequestHandler() {
 
     companion object {
 
-        private val PEOPLE = "/people"
+        private val PEOPLE = "/api/people"
     }
 }

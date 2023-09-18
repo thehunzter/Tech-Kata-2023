@@ -1,18 +1,13 @@
 package com.tech.kata.ui.main.mockconfig
 
-import okhttp3.mockwebserver.Dispatcher
 import okhttp3.mockwebserver.MockResponse
-import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.QueueDispatcher
 import okio.Buffer
 import java.io.IOException
 
-class MockWebServerRobot constructor(rule: MockWebServerRule) {
+class MockWebServerRobot constructor(private val mockWebServer: MockWebServerRule) {
 
-    private val mockWebServer: MockWebServer = rule.getMockWebServer()
-    private val dispatcher: Dispatcher = rule.getDispatcher()
-    private var rxIdlerController: RxIdlerController =
-        RxIdlerController()
+    private var rxIdlerController: RxIdlerController = RxIdlerController()
 
     @Throws(IOException::class)
     @JvmOverloads
@@ -22,29 +17,29 @@ class MockWebServerRobot constructor(rule: MockWebServerRule) {
         if (fileInputStream != null) {
             val mockResponse = MockResponse().setBody(Buffer().readFrom(fileInputStream))
             mockResponse.setResponseCode(httpCode)
-            mockWebServer.enqueue(mockResponse)
+            mockWebServer.getMockWebServer().enqueue(mockResponse)
         }
         return this
     }
 
     fun enqueueServerError(): MockWebServerRobot {
         val mockResponse = MockResponse().setHttp2ErrorCode(500)
-        mockWebServer.enqueue(mockResponse)
+        mockWebServer.getMockWebServer().enqueue(mockResponse)
         return this
     }
 
     fun enqueue(mockResponse: MockResponse): MockWebServerRobot {
-        mockWebServer.enqueue(mockResponse)
+        mockWebServer.getMockWebServer().enqueue(mockResponse)
         return this
     }
 
     fun useQueueDispatcher(): MockWebServerRobot {
-        mockWebServer.dispatcher = QueueDispatcher()
+        mockWebServer.getMockWebServer().dispatcher = QueueDispatcher()
         return this
     }
 
     fun useDefaultDispatcher(): MockWebServerRobot {
-        mockWebServer.dispatcher = dispatcher
+        mockWebServer.getMockWebServer().dispatcher = mockWebServer.getDispatcher()
         return this
     }
 

@@ -13,7 +13,7 @@ class NetworkConfigurationImpl(val context: Context) :
 
     override fun ioScheduler(): Scheduler = Schedulers.io()
 
-    override fun getHost(): String = "https://swapi.dev/api/"
+    override fun getHost(): String = "http://localhost:8081/" //"https://swapi.dev/api/"
 
     override fun getCacheDir(): File = context.cacheDir
 

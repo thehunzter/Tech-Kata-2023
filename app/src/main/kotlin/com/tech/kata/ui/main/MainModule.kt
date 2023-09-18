@@ -10,4 +10,8 @@ import retrofit2.Retrofit
 @Module
 abstract class MainModule {
 
+    @Binds
+    abstract fun providesMainPresenter(
+        mainPresenter: PeoplePresenter
+    ): MainContract.Presenter
 }
